@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { AuthContext } from "@/App";
 import { useToast } from "@/hooks/use-toast";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar: React.FC = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -40,6 +41,8 @@ const Navbar: React.FC = () => {
           GeminiChat
         </Link>
         <div className="flex items-center gap-4">
+          <ThemeToggle />
+          
           {user ? (
             <div className="flex items-center gap-4">
               <span className="text-sm hidden md:block">
